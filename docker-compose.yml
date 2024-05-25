@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  angular-app:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    ports:
+      - "16000:80"
+    depends_on:
+      - api-service
+
+  api-service:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "16001:8080"
