@@ -21,19 +21,23 @@ This repository contains 2 applications:
 ### Containerless Build and Setup
 #### Angular
   - Using the command line navigate to the Frontend folder of the repository.
-  - Run the ng serve --port 16000 command. Make sure the port is 16000 or 4200 as this are the only ports that the API will recognize for CORS.
+  - Run the ```ng serve --port 16000``` command. Make sure the port is 16000 or 4200 as these are the only ports that the API will recognize for CORS.
   - Navigate to localhost:4200 (depending on the port selected above) to access the UI.
     ![image](https://github.com/WesleyGo/GO_05242024/assets/8520424/bc3b9555-0bb5-4e6b-a15f-7e50be12a0c6)
 
 #### API
   - In VS Code or VS Studio, open the API folder or open the API.sln under the API folder. Please do note that the port should be set to 16001 as it is the port that the Angular app will look for. This can be done by modifying the launchSettings.json file.
-  - Rebuild and run the solution. The swagger UI should show indicating a successful build. Please do note that trying out the API will not work in Swagger as it needs the X-API-KEY header to access the endpoints.
+  - Rebuild and run the solution. The swagger UI should show indicating a successful build. Please do note that trying out the API will not work in Swagger as it needs the X-API-Key header to access the endpoints.
     ![image](https://github.com/WesleyGo/GO_05242024/assets/8520424/e7361fe8-ccf9-46b8-b28c-a4327f90a5c8)
 
 ## Setup using containers
-  - Using the docker cli, run this command on the root folder of the repository: docker compose up -d. After the build is done, it following should be seen in Docker Desktop.
+  - Using the docker cli, run this command on the root folder of the repository:
+    ```
+    docker compose up -d.
+    ```
+    After the build is done, the following should be seen in Docker Desktop.
     ![image](https://github.com/WesleyGo/GO_05242024/assets/8520424/820796de-97d1-4b29-84e7-db7353c70acd)
-  - The Angular app can then be access via http://localhost:16000.
+  - The Angular app can then be accessed via http://localhost:16000.
 
 ## Testing the API
   - The API is secured via a API key header. The header must have a header called X-API-Key which should have a value of 'my-api-key'. To test this, you can use curl to access the site like so:
